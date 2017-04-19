@@ -125,8 +125,8 @@ run() {
   prepare
 
   . /init/database/mysql.sh
-  . /init/pki_setup.sh
   . /init/restore_endpoints.sh
+  . /init/pki_setup.sh
   . /init/api_user.sh
   . /init/graphite_setup.sh
   . /init/configure_ssmtp.sh
