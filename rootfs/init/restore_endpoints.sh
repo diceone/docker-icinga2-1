@@ -11,15 +11,13 @@ fi
 restoreEndpoints() {
 
   source="/srv/icinga2/automatic-zones.d"
-  destination="/etc/icinga2/automatic-zones.d"
+  destination="/etc/icinga2"
 
   [ -d ${source} ] || mkdir -p ${source}
 
-  cp -a "${source}/*" ${destination}/
+  cp -ra "${source}" ${destination}/
 
-  cmd="/init/watch-endpoints.sh"
-
-  $cmd &
+  exec /init/watch-endpoints.sh &
 
 }
 
